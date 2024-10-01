@@ -1758,6 +1758,24 @@ QUnit.test("LeftParenthesisDigitTwoDigitZeroRightParenthesisTest", assert => {
     assert.equal(foldStrict(String.fromCharCode(0x2487)), "(20)", " \"\\u2487\": \"(20)\"");
 });
 
+QUnit.test("FractionTest", assert => {
+    assert.equal(foldStrict(String.fromCharCode(0xBC)), "1/4", " \"\\uBC\": \"1/4\"");
+    assert.equal(foldStrict(String.fromCharCode(0xBD)), "1/2", " \"\\uBD\": \"1/2\"");
+    assert.equal(foldStrict(String.fromCharCode(0xBE)), "3/4", " \"\\uBE\": \"3/4\"");
+    assert.equal(foldStrict(String.fromCharCode(0x2153)), "1/3", " \"\\u2153\": \"1/3\"");
+    assert.equal(foldStrict(String.fromCharCode(0x2154)), "2/3", " \"\\u2154\": \"2/3\"");
+    assert.equal(foldStrict(String.fromCharCode(0x2155)), "1/5", " \"\\u2155\": \"1/5\"");
+    assert.equal(foldStrict(String.fromCharCode(0x2156)), "2/5", " \"\\u2156\": \"2/5\"");
+    assert.equal(foldStrict(String.fromCharCode(0x2157)), "3/5", " \"\\u2157\": \"3/5\"");
+    assert.equal(foldStrict(String.fromCharCode(0x2158)), "4/5", " \"\\u2158\": \"4/5\"");
+    assert.equal(foldStrict(String.fromCharCode(0x2159)), "1/6", " \"\\u2159\": \"1/6\"");
+    assert.equal(foldStrict(String.fromCharCode(0x215A)), "5/6", " \"\\u215A\": \"5/6\"");
+    assert.equal(foldStrict(String.fromCharCode(0x215B)), "1/8", " \"\\u215B\": \"1/8\"");
+    assert.equal(foldStrict(String.fromCharCode(0x215C)), "3/8", " \"\\u215C\": \"3/8\"");
+    assert.equal(foldStrict(String.fromCharCode(0x215D)), "5/8", " \"\\u215D\": \"5/8\"");
+    assert.equal(foldStrict(String.fromCharCode(0x215E)), "7/8", " \"\\u215E\": \"7/8\"");
+});
+
 QUnit.test("QuotationMarkTest", assert => {
     assert.equal(foldStrict(String.fromCharCode(0xab)), "\"", " \"\\u00AB\": \"\"\"");
     assert.equal(foldStrict(String.fromCharCode(0xbb)), "\"", " \"\\u00BB\": \"\"\"");
